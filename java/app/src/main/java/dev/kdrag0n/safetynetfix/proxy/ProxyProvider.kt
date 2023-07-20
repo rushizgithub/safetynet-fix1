@@ -21,37 +21,29 @@ class ProxyProvider(
 
     override fun getService(type: String?, algorithm: String?): Service? {
         logDebug("Provider: get service - type=$type algorithm=$algorithm")
-        val host = Build.HOST
-        if (type == "KeyStore" && host != "xiaomi.eu") {
+        if (type == "KeyStore" && Build.HOST != "xiaomi.eu") {
 
-            val origProduct = Build.PRODUCT
-            val patchedProduct = "marlin"
+            val patchedProduct = "walleye"
+            val patchedDevice = "walleye"
+            val patchedModel = "Pixel 2"
+            val patchedFingerprint = "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys"
 
-            val origDevice = Build.DEVICE
-            val patchedDevice = "marlin"
-
-            val origModel = Build.MODEL
-            val patchedModel = "Pixel XL"
-
-            val origFingerprint = Build.FINGERPRINT
-            val patchedFingerprint = "google/marlin/marlin:7.1.2/NJH47F/4146041:user/release-keys"
-
-            logDebug("Patch PRODUCT for KeyStore $origProduct -> $patchedProduct")
+            logDebug("Patch PRODUCT prop. Set it to: $patchedProduct")
             Build::class.java.getDeclaredField("PRODUCT").let { field ->
                 field.isAccessible = true
                 field.set(null, patchedProduct)
             }
-            logDebug("Patch DEVICE for KeyStore $origDevice -> $patchedDevice")
+            logDebug("Patch DEVICE prop. Set it to: $patchedDevice")
             Build::class.java.getDeclaredField("DEVICE").let { field ->
                 field.isAccessible = true
                 field.set(null, patchedDevice)
             }
-            logDebug("Patch MODEL for KeyStore $origModel -> $patchedModel")
+            logDebug("Patch MODEL prop. Set it to: $patchedModel")
             Build::class.java.getDeclaredField("MODEL").let { field ->
                 field.isAccessible = true
                 field.set(null, patchedModel)
             }
-            logDebug("Patch FINGERPRINT for KeyStore $origFingerprint -> $patchedFingerprint")
+            logDebug("Patch FINGERPRINT prop. Set it to: $patchedFingerprint")
             Build::class.java.getDeclaredField("FINGERPRINT").let { field ->
                 field.isAccessible = true
                 field.set(null, patchedFingerprint)
