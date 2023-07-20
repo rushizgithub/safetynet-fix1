@@ -1,7 +1,7 @@
 ## v2.4.0-MOD_2.0
 * Fix KernelSU support. You still need "ZygiskOnKernelSU".
 * Fix WiFi calling on some devices (and maybe other related issues) by moving changing *ro.product.first_api_level* from global namespace to GMS only.
-* Pass *MEETS_STRONG_INTEGRITY*. By default you need device that lounched with Android 13+ or custom ROM that manipulate with *ro.product.first_api_level* (>= 33 / or `null` / or not present).<br/>If you want to play with it more complex - use separate "-STRONG" build. NOTE: Various system issues are possible on "-STRONG" build!
+* Pass *MEETS_STRONG_INTEGRITY*. By default you need device that launched with Android 13+ or custom ROM that manipulate with *ro.product.first_api_level* (>= 33 / or `null` / or not present).<br/>If you want to play with it more complex - use separate "-STRONG" build. NOTE: Various system issues are possible on "-STRONG" build!
 
 ## v2.4.0-MOD_1.3
 
