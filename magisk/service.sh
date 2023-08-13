@@ -1,4 +1,3 @@
-#!/system/bin/sh
 # Sensitive properties
 
 maybe_set_prop() {

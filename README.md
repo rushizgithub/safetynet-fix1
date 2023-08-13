@@ -1,4 +1,4 @@
-# Universal SafetyNet Fix [MOD]
+# Universal SafetyNet & Play Integrity Fix [MOD]
 
 Magisk module to work around Google's SafetyNet and Play Integrity attestation.
 
