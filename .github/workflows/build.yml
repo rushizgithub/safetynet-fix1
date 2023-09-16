@@ -30,7 +30,8 @@ jobs:
         cp "../zygisk/module/libs/armeabi-v7a/libsafetynetfix.so" "zygisk/armeabi-v7a.so"
         cp "../zygisk/module/libs/x86/libsafetynetfix.so" "zygisk/x86.so"
         cp "../zygisk/module/libs/x86_64/libsafetynetfix.so" "zygisk/x86_64.so"
-        unzip "../java/app/build/outputs/apk/release/app-release.apk" "SNFix.dex"
+        unzip "../java/app/build/outputs/apk/release/app-release.apk" "classes.dex"
+        mv ./java/app/build/outputs/apk/release/classes.dex ./java/app/build/outputs/apk/release/SNFix.dex
       working-directory: ./magisk
     - name: Upload Zip
       uses: actions/upload-artifact@v3
